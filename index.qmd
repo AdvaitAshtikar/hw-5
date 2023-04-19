@@ -150,7 +150,15 @@ lm_fit <- lm(median_house_value ~ . -households, data = df_train)
 summary(lm_fit)
 ```
 
-> Based on the summary , we can see that ...
+> Based on the summary , we can see that the coefficients for each
+> variable represent the expected change in the median house value for a
+> one-unit increase in the corresponding predictor variable, while
+> holding all other variables constant. The intercept of -2.273e+06
+> represents the expected median house value when all predictor
+> variables are equal to zero. The adjusted R-squared value of 0.6428
+> indicates that the model explains about 64.28% of the variance in the
+> median house value, after adjusting for the number of predictor
+> variables in the model.
 
 ------------------------------------------------------------------------
 
@@ -535,6 +543,7 @@ nnet_fit <- NNet %>%
   )
 
 ```
+
 ```{R}
 nnet_predictions <- ifelse(predict(nnet_fit,
                                    model.matrix(spam ~ 0 + ., data = dfTest)) > 0.5, 1, 0)
@@ -866,7 +875,11 @@ plot_decision_boundary(NN3)
 What are the differences between the models? How do the decision
 boundaries change as the number of hidden layers increases?
 
-> The differences between the models are ...
+> The differences between the models is that with an increase in the
+> number of hidden layers, the neural network becomes more capable of
+> learning non-linear decision boundaries and more complex features,
+> which result in better performance on tasks that require the
+> classification of non-linear data.
 
 ------------------------------------------------------------------------
 
